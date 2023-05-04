@@ -36,3 +36,6 @@
 
 # Environment
 .env
+
+# IDE
+.idea
