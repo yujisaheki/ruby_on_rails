@@ -29,5 +29,5 @@ sudo ln -s /usr/local/lib/docker/cli-plugins/docker-compose /usr/bin/docker-comp
 
 # node version
 nvm install 16.0.0
-nvm alias default v16.0.0
 nvm use 16.0.0
+#nvm alias default v16.0.0
