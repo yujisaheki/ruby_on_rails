@@ -1,9 +1,21 @@
+<div>
+    <h1>スレッド新規登録</h1>
+</div>
 <div class="container">
   <div class="row">
     <div class="col-md-8 mx-auto post-form-container">
-      <h2>投稿画面</h2>
+      <h2> 新規投稿</h2>
+      <!--ここから入れ替えて追加します-->
+      <!--model: @postを追加しています-->
       <%= form_with(url: create_post_path, local: true, method: :post, html: { class:'post-form' } ) do |f| %>
-      
+      <!--バリデーションエラーメッセージ表示を追加しています-->
+      <% if @post.errors.any? %>
+       <ul>
+           <% @post.errors.full_messages.each do |message| %>
+             <li>< message %></li>
+           <% end %></ul>
+      <% end %>
+       <!--ここまで-->
        <div class="form-group">
            <%= f.label "タイトル", class: 'form-label' %>
            <%= f.text_field :title, class: 'form-control' %>
@@ -20,13 +32,13 @@
                 <img src="" alt="Image Preview" class="image-preview_image">
                 <span class="image-preview_default-text">Image will be displayed here</span>
             </div>
-            <%= f.file_field :image, class: 'form-control-file', id= 'imageUpload' %>
+            <%= f.file_field :image, class: 'form-control-file', id: 'imageUpload' %>
        </div>
        
        <div class="button-group">
            <%= f.submit "投稿する", class: 'btn btn-primary' %>
        </div>
-     <& end %>
-    </div>
-  </div>
-</div>
+     <% end %>
+     </div>
+    </div> 
+ </div>
